@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vigne & Co. — Fine Wine Shop, Scarborough</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --ivory: #f5f0e8;
+      --gold: #c9a84c;
+    }
+
+    .icon-gold,
+    .service-card-icon i,
+    .learn-icon i,
+    .contact-icon i,
+    .desc-pillars i,
+    .service-btn-icon i {
+      color: var(--gold);
+    }
+  </style>
+
+</head>
+
+<body>
+  <!--Audio-->
+  <audio src="./assets/song1.mp3" autoplay></audio>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION BAR
+  ═══════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="#" class="nav-logo">
+        <span class="logo-main">Vigne <em>&amp;</em> Co.</span>
+        <span class="logo-sub">Fine Wines · Scarborough</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#shop" class="nav-link">Shop</a>
+
+        <!-- Order Dropdown -->
+        <div class="nav-dropdown" id="nav-dropdown-order">
+          <button class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false"
+            id="order-dropdown-btn">
+            Order <span class="dropdown-caret">&#9662;</span>
+          </button>
+          <div class="nav-dropdown-menu" id="order-dropdown-menu" role="menu">
+            <a href="delivery.html" class="nav-dropdown-item" id="nav-link--delivery" data-page="delivery"
+              role="menuitem">
+              <i class="fa-solid fa-truck-fast icon-gold"></i> Online Delivery
+            </a>
+            <a href="pickup.html" class="nav-dropdown-item" id="nav-link--pickup" data-page="pickup" role="menuitem">
+              <i class="fa-solid fa-bag-shopping icon-gold"></i> In-Store Pickup
+            </a>
+            <a href="events.html" class="nav-dropdown-item" id="nav-link--events" data-page="events" role="menuitem">
+              <i class="fa-solid fa-champagne-glasses icon-gold"></i> Events &amp; Booking
+            </a>
+          </div>
+        </div>
+
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#learn" class="nav-link">Learn More</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <input type="text" placeholder="Search wines…" class="search-input" id="search-input" />
+        <button class="search-btn" aria-label="Search">
+          <!-- Magnifier SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Burger Button (Mobile) -->
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#shop" class="mobile-link">Shop</a>
+
+      <!-- Mobile Order Sub-group -->
+      <div class="mobile-group" id="mobile-group-order">
+        <button class="mobile-group-toggle" id="mobile-order-toggle" aria-expanded="false">
+          Order &amp; Book <span class="dropdown-caret">&#9662;</span>
+        </button>
+        <div class="mobile-group-items" id="mobile-order-items">
+          <a href="delivery.html" class="mobile-link mobile-sub-link" id="mobile-link--delivery" data-page="delivery">
+            <i class="fa-solid fa-truck-fast icon-gold"></i> Online Delivery
+          </a>
+          <a href="pickup.html" class="mobile-link mobile-sub-link" id="mobile-link--pickup" data-page="pickup">
+            <i class="fa-solid fa-bag-shopping icon-gold"></i> In-Store Pickup
+          </a>
+          <a href="events.html" class="mobile-link mobile-sub-link" id="mobile-link--events" data-page="events">
+            <i class="fa-solid fa-champagne-glasses icon-gold"></i> Events &amp; Booking
+          </a>
+        </div>
+      </div>
+
+      <a href="#about" class="mobile-link">About Us</a>
+      <a href="#learn" class="mobile-link">Learn More</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <div class="mobile-search">
+        <input type="text" placeholder="Search wines…" class="search-input" />
+        <button class="search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-noise"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Scarborough's Premier Wine Destination</p>
+      <h1 class="hero-title">
+        Every Bottle<br />
+        <em>Tells a Story</em>
+      </h1>
+      <p class="hero-body">
+        Curated selections from the world's finest regions — from bold Bordeaux
+        to crisp Marlborough Sauvignon Blancs. Expertly chosen, passionately served.
+      </p>
+      <div class="hero-cta">
+        <a href="#shop" class="btn btn-primary">Explore Our Collection</a>
+        <a href="#learn" class="btn btn-ghost">Our Story</a>
+      </div>
+
+      <!-- Service Quick-Action CTAs -->
+      <div class="hero-services" id="hero-services">
+        <a href="delivery.html" class="hero-service-btn" id="hero-cta--delivery" data-page="delivery">
+          <span class="service-btn-icon"><i class="fa-solid fa-truck-fast"></i></span>
+          <span class="service-btn-text">
+            <strong>Order Delivery</strong>
+            <small>To your door</small>
+          </span>
+        </a>
+        <a href="pickup.html" class="hero-service-btn" id="hero-cta--pickup" data-page="pickup">
+          <span class="service-btn-icon"><i class="fa-solid fa-bag-shopping"></i></span>
+          <span class="service-btn-text">
+            <strong>Schedule Pickup</strong>
+            <small>Ready in 30 min</small>
+          </span>
+        </a>
+        <a href="events.html" class="hero-service-btn" id="hero-cta--events" data-page="events">
+          <span class="service-btn-icon"><i class="fa-solid fa-champagne-glasses"></i></span>
+          <span class="service-btn-text">
+            <strong>Book an Event</strong>
+            <small>Private &amp; corporate</small>
+          </span>
+        </a>
+      </div>
+      <div class="hero-hours">
+        <span class="hours-badge">
+          <span class="dot"></span>
+          Mon – Fri &nbsp;10:00 am – 11:00 pm
+        </span>
+        <span class="hours-divider">|</span>
+        <span class="hours-badge">
+          Sat – Sun &nbsp;12:00 pm – 10:00 pm
+        </span>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES SECTION
+       Pages: delivery.html | pickup.html | events.html
+  ═══════════════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="section-header">
+      <p class="section-eyebrow">How We Serve You</p>
+      <h2 class="section-title">Order Your Way</h2>
+    </div>
+
+    <div class="services-grid" id="services-grid">
+
+      <!-- ── DELIVERY CARD ── -->
+      <article class="service-card service-card--delivery" id="service-card--delivery" data-page="delivery">
+        <div class="service-card-icon" aria-hidden="true"><i class="fa-solid fa-truck-fast"></i></div>
+        <div class="service-card-badge">Available Now</div>
+        <h3 class="service-card-title">Online Delivery</h3>
+        <p class="service-card-desc">
+          Browse our full catalogue and have handpicked bottles delivered straight
+          to your door across Scarborough and the GTA. Same-day delivery available
+          on orders placed before 7:00 pm.
+        </p>
+        <ul class="service-card-perks">
+          <li>Free delivery on orders over $75</li>
+          <li>Same-day GTA delivery</li>
+          <li>Real-time order tracking</li>
+          <li>Contactless drop-off option</li>
+        </ul>
+        <a href="delivery.html" class="btn btn-primary service-card-cta" id="cta-btn--delivery" data-page="delivery"
+          aria-label="Start your online delivery order">
+          Order for Delivery
+        </a>
+      </article>
+
+      <!-- ── PICKUP CARD ── -->
+      <article class="service-card service-card--pickup" id="service-card--pickup" data-page="pickup">
+        <div class="service-card-icon" aria-hidden="true"><i class="fa-solid fa-bag-shopping"></i></div>
+        <div class="service-card-badge service-card-badge--gold">Skip the Wait</div>
+        <h3 class="service-card-title">In-Store Pickup</h3>
+        <p class="service-card-desc">
+          Order online and pick up your selection in as little as 30 minutes.
+          We'll have your order ready, bagged, and waiting at our dedicated
+          pickup counter — no browsing required.
+        </p>
+        <ul class="service-card-perks">
+          <li>Ready in as little as 30 minutes</li>
+          <li>Dedicated pickup counter</li>
+          <li>No minimum order</li>
+          <li>Mon–Fri 10 am · Sat–Sun 12 pm</li>
+        </ul>
+        <a href="pickup.html" class="btn btn-primary service-card-cta" id="cta-btn--pickup" data-page="pickup"
+          aria-label="Schedule an in-store pickup">
+          Schedule Pickup
+        </a>
+      </article>
+
+      <!-- ── EVENTS / BOOKING CARD ── -->
+      <article class="service-card service-card--events" id="service-card--events" data-page="events">
+        <div class="service-card-icon" aria-hidden="true"><i class="fa-solid fa-champagne-glasses"></i></div>
+        <div class="service-card-badge service-card-badge--dark">Reserve Now</div>
+        <h3 class="service-card-title">Events &amp; Bookings</h3>
+        <p class="service-card-desc">
+          Planning a private tasting, corporate celebration, or wedding wine service?
+          Our events team crafts bespoke wine experiences for groups of any size,
+          complete with sommelier guidance and custom curation.
+        </p>
+        <ul class="service-card-perks">
+          <li>Private tastings &amp; cellar tours</li>
+          <li>Corporate event packages</li>
+          <li>Wedding &amp; milestone curation</li>
+          <li>Sommelier-led guided sessions</li>
+        </ul>
+        <a href="events.html" class="btn btn-primary service-card-cta" id="cta-btn--events" data-page="events"
+          aria-label="Book a special event or tasting">
+          Book an Event
+        </a>
+      </article>
+
+    </div><!-- /.services-grid -->
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FEATURED CARDS (auto-sliding gallery)
+  ═══════════════════════════════════════════ -->
+  <section class="featured" id="shop">
+    <div class="section-header">
+      <p class="section-eyebrow">This Season's Picks</p>
+      <h2 class="section-title">Featured Selections</h2>
+    </div>
+
+    <div class="slider-wrapper">
+      <div class="slider-track" id="slider-track">
+
+        <article class="wine-card">
+          <div class="card-img card-img--bordeaux"></div>
+          <div class="card-body">
+            <span class="card-tag">Red Wine</span>
+            <h3 class="card-name">Château Margaux Reserve</h3>
+            <p class="card-region">Bordeaux, France</p>
+            <div class="card-footer">
+              <span class="card-price">$89.00</span>
+              <button class="card-btn">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="wine-card">
+          <div class="card-img card-img--white"></div>
+          <div class="card-body">
+            <span class="card-tag">White Wine</span>
+            <h3 class="card-name">Cloudy Bay Sauvignon Blanc</h3>
+            <p class="card-region">Marlborough, New Zealand</p>
+            <div class="card-footer">
+              <span class="card-price">$42.00</span>
+              <button class="card-btn">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="wine-card">
+          <div class="card-img card-img--rose"></div>
+          <div class="card-body">
+            <span class="card-tag">Rosé</span>
+            <h3 class="card-name">Provence Rosé d'Été</h3>
+            <p class="card-region">Provence, France</p>
+            <div class="card-footer">
+              <span class="card-price">$36.00</span>
+              <button class="card-btn">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="wine-card">
+          <div class="card-img card-img--sparkling"></div>
+          <div class="card-body">
+            <span class="card-tag">Sparkling</span>
+            <h3 class="card-name">Moët &amp; Chandon Brut</h3>
+            <p class="card-region">Champagne, France</p>
+            <div class="card-footer">
+              <span class="card-price">$65.00</span>
+              <button class="card-btn">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="wine-card">
+          <div class="card-img card-img--dessert"></div>
+          <div class="card-body">
+            <span class="card-tag">Dessert Wine</span>
+            <h3 class="card-name">Sauternes Château d'Yquem</h3>
+            <p class="card-region">Sauternes, France</p>
+            <div class="card-footer">
+              <span class="card-price">$120.00</span>
+              <button class="card-btn">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="wine-card">
+          <div class="card-img card-img--rioja"></div>
+          <div class="card-body">
+            <span class="card-tag">Red Wine</span>
+            <h3 class="card-name">Rioja Gran Reserva</h3>
+            <p class="card-region">La Rioja, Spain</p>
+            <div class="card-footer">
+              <span class="card-price">$55.00</span>
+              <button class="card-btn">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.slider-track -->
+
+      <!-- Slider Dots -->
+      <div class="slider-dots" id="slider-dots"></div>
+
+      <!-- Slider Arrows -->
+      <button class="slider-arrow slider-arrow--prev" id="prev-btn" aria-label="Previous">&#8592;</button>
+      <button class="slider-arrow slider-arrow--next" id="next-btn" aria-label="Next">&#8594;</button>
+    </div>
+
+    <div class="featured-shop-more" style="text-align:center; margin-top:2rem;">
+      <a href="#shop" class="btn btn-primary" id="shop-more-btn">Shop More</a>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       DESCRIPTION / ABOUT STRIP
+  ═══════════════════════════════════════════ -->
+  <section class="description" id="about">
+    <div class="desc-grid">
+
+      <div class="desc-visual">
+        <div class="desc-box desc-box--large"></div>
+        <div class="desc-box desc-box--small"></div>
+        <div class="desc-tag-float">Est. 2009</div>
+      </div>
+
+      <div class="desc-text">
+        <p class="section-eyebrow">Our Philosophy</p>
+        <h2 class="section-title">Wine is not just<br /><em>a drink — it's culture.</em></h2>
+        <p class="desc-body">
+          At Vigne &amp; Co., we believe every glass should transport you somewhere extraordinary.
+          Founded in the heart of Scarborough, we've spent over a decade building relationships
+          with boutique vineyards and storied estates across five continents.
+        </p>
+        <p class="desc-body">
+          Whether you're a seasoned collector or uncorking your very first bottle,
+          our knowledgeable staff are here to guide you — without pretension, only passion.
+        </p>
+        <ul class="desc-pillars">
+          <li><span><i class="fa-solid fa-award"></i></span>Curated global selection</li>
+          <li><span><i class="fa-solid fa-book-open"></i></span> Expert tasting guidance</li>
+          <li><span><i class="fa-solid fa-truck-fast"></i></span> Same-day local delivery</li>
+          <li><span><i class="fa-solid fa-gift"></i></span> Custom gift curation</li>
+        </ul>
+        <a href="#learn" class="btn btn-primary" style="margin-top: 2rem; display: inline-block;">Discover More</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       STATS BAR
+  ═══════════════════════════════════════════ -->
+  <section class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">1,200<sup>+</sup></span>
+        <span class="stat-label">Labels in Stock</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">15</span>
+        <span class="stat-label">Years in Scarborough</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">38</span>
+        <span class="stat-label">Countries Sourced</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">4.9<sup>★</sup></span>
+        <span class="stat-label">Average Rating</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       LEARN MORE STRIP
+  ═══════════════════════════════════════════ -->
+  <section class="learn" id="learn">
+    <div class="learn-inner">
+      <p class="section-eyebrow" style="color: var(--gold-light);">Expand Your Palate</p>
+      <h2 class="section-title" style="color: var(--cream);">Not sure where to start?</h2>
+      <p class="learn-body">
+        From understanding terroir to pairing wines with food, our learning resources,
+        in-store tastings, and expert consultations are designed to make the world
+        of wine approachable and endlessly exciting.
+      </p>
+      <div class="learn-cards">
+        <div class="learn-card">
+          <div class="learn-icon"><i class="fa-solid fa-wine-glass"></i></div>
+          <h4>Wine 101</h4>
+          <p>A beginner's guide to varietals, regions, and tasting notes.</p>
+        </div>
+        <div class="learn-card">
+          <div class="learn-icon"><i class="fa-solid fa-cheese"></i></div>
+          <h4>Food Pairing</h4>
+          <p>Master the art of matching wine with every dish on your table.</p>
+        </div>
+        <div class="learn-card">
+          <div class="learn-icon"><i class="fa-solid fa-earth-americas"></i></div>
+          <h4>Wine Regions</h4>
+          <p>Explore Old World and New World wine regions in depth.</p>
+        </div>
+      </div>
+      <a href="#" class="btn btn-ghost" style="margin-top: 2.5rem; display: inline-block;">Browse All Guides</a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CUSTOMER RATINGS & REVIEWS
+  ═══════════════════════════════════════════ -->
+  <section class="reviews">
+    <div class="section-header">
+      <p class="section-eyebrow">What Our Customers Say</p>
+      <h2 class="section-title">Loved by Wine Lovers</h2>
+    </div>
+
+    <!-- Overall Score -->
+    <div class="rating-overview">
+      <div class="rating-big">4.9</div>
+      <div class="rating-stars">★★★★★</div>
+      <p class="rating-count">Based on 847 verified reviews</p>
+
+      <!-- Bar breakdown -->
+      <div class="rating-bars">
+        <div class="bar-row">
+          <span>5 ★</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 88%"></div>
+          </div>
+          <span>88%</span>
+        </div>
+        <div class="bar-row">
+          <span>4 ★</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 8%"></div>
+          </div>
+          <span>8%</span>
+        </div>
+        <div class="bar-row">
+          <span>3 ★</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 2%"></div>
+          </div>
+          <span>2%</span>
+        </div>
+        <div class="bar-row">
+          <span>2 ★</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 1%"></div>
+          </div>
+          <span>1%</span>
+        </div>
+        <div class="bar-row">
+          <span>1 ★</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 1%"></div>
+          </div>
+          <span>1%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Cards -->
+    <div class="reviews-grid">
+
+      <blockquote class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          "Absolutely the best wine shop in Scarborough. The staff helped me find
+          a perfect Burgundy for our anniversary dinner — they really know their stuff."
+        </p>
+        <footer class="review-author">
+          <div class="author-avatar">M</div>
+          <div>
+            <strong>Margaret T.</strong>
+            <span>Scarborough, ON</span>
+          </div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          "Wide selection, fair prices, and knowledgeable staff. I always walk out
+          with something I didn't know I needed. The gift curation service is a gem."
+        </p>
+        <footer class="review-author">
+          <div class="author-avatar">D</div>
+          <div>
+            <strong>Daniel K.</strong>
+            <span>Toronto, ON</span>
+          </div>
+        </footer>
+      </blockquote>
+
+      <blockquote class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          "I'm new to wine and they made me feel so welcome. No snobbery here —
+          just genuine enthusiasm and great recommendations for every budget."
+        </p>
+        <footer class="review-author">
+          <div class="author-avatar">P</div>
+          <div>
+            <strong>Priya S.</strong>
+            <span>Pickering, ON</span>
+          </div>
+        </footer>
+      </blockquote>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT SECTION
+  ═══════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title">Visit the Shop</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+            <span>123 Kingston Road, Scarborough, ON M1N 1N4</span>
+          </li>
+          <li>
+            <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+            <span>(416) 555-0192</span>
+          </li>
+          <li>
+            <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+            <span>hello@vigneandco.ca</span>
+          </li>
+        </ul>
+        <div class="hours-table">
+          <h4>Store Hours</h4>
+          <div class="hours-row">
+            <span>Monday – Friday</span>
+            <span>10:00 am – 11:00 pm</span>
+          </div>
+          <div class="hours-row">
+            <span>Saturday – Sunday</span>
+            <span>12:00 pm – 10:00 pm</span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <h3>Send Us a Message</h3>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"
+            placeholder="Ask about wines, events, or reservations…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo">Vigne <em>&amp;</em> Co.</span>
+        <p class="footer-tagline">
+          Bringing the world's finest wines to Scarborough since 2009.
+          Uncork something extraordinary today.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Instagram">IG</a>
+          <a href="#" class="social-link" aria-label="Facebook">FB</a>
+          <a href="#" class="social-link" aria-label="Pinterest">PT</a>
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <h5>Quick Links</h5>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About Us</a>
+        <a href="#learn">Learn More</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-links-group">
+        <h5>Order &amp; Book</h5>
+        <a href="delivery.html" id="footer-link--delivery" data-page="delivery"><i
+            class="fa-solid fa-truck-fast icon-gold"></i> Online Delivery</a>
+        <a href="pickup.html" id="footer-link--pickup" data-page="pickup"><i
+            class="fa-solid fa-bag-shopping icon-gold"></i> In-Store Pickup</a>
+        <a href="events.html" id="footer-link--events" data-page="events"><i
+            class="fa-solid fa-champagne-glasses icon-gold"></i> Events &amp; Booking</a>
+      </div>
+
+      <div class="footer-links-group">
+        <h5>Collections</h5>
+        <a href="#">Red Wines</a>
+        <a href="#">White Wines</a>
+        <a href="#">Rosé</a>
+        <a href="#">Sparkling</a>
+        <a href="#">Dessert Wines</a>
+      </div>
+
+      <div class="footer-links-group">
+        <h5>Policies</h5>
+        <a href="#">Shipping &amp; Returns</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Age Verification</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Vigne &amp; Co. All rights reserved. Must be 19+ to purchase alcohol in Ontario.</p>
+      <p class="footer-credit">Crafted with care in Scarborough, CA <i class="fa-solid fa-wine-glass icon-gold"></i></p>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
