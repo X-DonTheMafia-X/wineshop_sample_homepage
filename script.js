@@ -1169,3 +1169,37 @@ function startMusic() {
 window.addEventListener("scroll", startMusic);
 window.addEventListener("click", startMusic);
 window.addEventListener("touchstart", startMusic);
+
+
+// Background audio permission popup
+const popup = document.getElementById("music-popup");
+const audio = document.getElementById("bgMusic");
+
+// Check previous choice
+const musicPreference = localStorage.getItem("musicEnabled");
+
+if (musicPreference === "true") {
+    popup.style.display = "none";
+
+    // User previously allowed music
+    document.addEventListener(
+        "click",
+        () => audio.play(),
+        { once: true }
+    );
+}
+
+// Enable music button
+document.getElementById("enable-music").addEventListener("click", () => {
+    localStorage.setItem("musicEnabled", "true");
+
+    audio.play();
+    popup.style.display = "none";
+});
+
+// Skip music button
+document.getElementById("skip-music").addEventListener("click", () => {
+    localStorage.setItem("musicEnabled", "false");
+
+    popup.style.display = "none";
+});
