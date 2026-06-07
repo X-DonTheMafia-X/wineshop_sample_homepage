@@ -1153,4 +1153,19 @@ function init() {
     'background:#c9a84c;color:#0a0a0a;font-family:serif;font-size:13px;padding:4px 8px;border-radius:3px 0 0 3px;font-weight:bold;',
     'background:#1e1e1e;color:#c9a84c;font-family:monospace;font-size:12px;padding:4px 8px;border-radius:0 3px 3px 0;'
   );
+
 }
+
+const bgMusic = document.getElementById("bgMusic");
+
+function startMusic() {
+    bgMusic.play().catch(err => console.log(err));
+
+    window.removeEventListener("scroll", startMusic);
+    window.removeEventListener("click", startMusic);
+    window.removeEventListener("touchstart", startMusic);
+}
+
+window.addEventListener("scroll", startMusic);
+window.addEventListener("click", startMusic);
+window.addEventListener("touchstart", startMusic);
